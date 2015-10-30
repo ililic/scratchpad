@@ -1,6 +1,6 @@
 # Install a Go-Ethereum node on Ubuntu Virtual Machines using Custom Script Linux Extension
 
-<a href=""https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fililic%2fscratchpad%2fmaster%2fquickstart%2fgo-ethereum-on-ubuntu%2fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fililic%2fscratchpad%2fmaster%2fquickstart%2fgo-ethereum-on-ubuntu%2fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
