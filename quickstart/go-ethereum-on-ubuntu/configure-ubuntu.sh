@@ -130,12 +130,16 @@ time sudo npm install azure-cli -g
 time sudo update-alternatives --install /usr/bin/node nodejs /usr/bin/nodejs 100
 
 ####################
-# Setup Chrome
+# Setup Geth
 ####################
-cd /tmp
-time wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-time sudo dpkg -i google-chrome-stable_current_amd64.deb
-time sudo apt-get -y --force-yes install -f
-time rm /tmp/google-chrome-stable_current_amd64.deb
+time sudo apt-get -y git
+time sudo apt-get install software-properties-common
+time sudo add-apt-repository -y ppa:ethereum/ethereum
+time sudo add-apt-repository -y ppa:ethereum/ethereum-dev
+time sudo apt-get update
+time sudo apt-get install ethereum
+
 date
 echo "completed ubuntu devbox install on pid $$"
+
+geth

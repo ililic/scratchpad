@@ -29,7 +29,7 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_D2",
+      "defaultValue": "Standard_D1",
       "allowedValues": [
         "Standard_D1",
         "Standard_D2",
@@ -53,7 +53,7 @@
     "osImageSKU" : "14.04.3-LTS",
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
-    "customScriptLocation": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/ubuntu-desktop/",
+    "customScriptLocation": "https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/",
     "wgetCommandPrefix": "[concat('wget --tries 20 --retry-connrefused --waitretry=15 -qO- ', variables('customScriptLocation'), 'configure-ubuntu.sh | nohup /bin/bash -s ')]",
     "wgetCommandPostfix":  " > /var/log/azure/firstinstall.log 2>&1 &'",
     "commandPrefix": "/bin/bash -c '",
