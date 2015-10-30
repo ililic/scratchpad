@@ -3,7 +3,7 @@
     "value": "ubuntudesktop0914"
   },
   "adminUsername": {
-    "value": "azureuser"
+    "value": "geth"
   },
   "adminPassword": {
     "value": "password1234$"
@@ -12,6 +12,6 @@
     "value": "ubuntudesktop0914"
   },
   "vmsize" : {
-    "value": "Standard_D2"
+    "value": "Standard_D1"
   }
 }
