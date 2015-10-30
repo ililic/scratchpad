@@ -1,7 +1,7 @@
 {
-  "itemDisplayName": "Create an Ubuntu desktop",
-  "description": "This template creates an ubuntu desktop machine.  This works great for use as a jumpbox behind a NAT.",
-  "summary": "Create an Ubuntu desktop workstation.",
-  "githubUsername": "anhowe",
-  "dateUpdated": "2015-09-15"
+  "itemDisplayName": "Go Ethereum on Ubuntu",
+  "description": "This template deploys a Go Ethereum public node",
+  "summary": "This template deploys a Go Ethereum public node on the Ubuntu image",
+  "githubUsername": "ililic",
+  "dateUpdated": "2015-10-30"
 }
