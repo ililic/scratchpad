@@ -2,7 +2,7 @@
 
 This is an Azure template to create an Ubuntu Desktop VM.  This is great as a jumpbox behind a NAT.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fubuntu-desktop%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fililic%2fscratchpad%2fmaster%2fquickstart%2fgo-ethereum-on-ubuntu%2fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
