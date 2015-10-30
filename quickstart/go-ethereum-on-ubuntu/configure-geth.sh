@@ -35,7 +35,7 @@ time sudo apt-get update
 time sudo apt-get install -y ethereum
 
 # Make the $$HOMEDIR/ethereum directory to skip the legalese
-mkdir $HOMEDIR/ethereum
+mkdir -p $HOMEDIR/.ethereum/keystore/
 
 nohup geth > $HOMEDIR/geth.log &
 
