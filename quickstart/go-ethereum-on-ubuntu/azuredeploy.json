@@ -26,12 +26,6 @@
         "description": "This is the the password you wish to assign to your VMs admin account"
       }
     },
-    "mySqlPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Password for your mySQL account"
-      }
-    },
     "vmSize": {
       "type": "string",
       "metadata": {
@@ -198,7 +192,7 @@
           "fileUris": [
             "https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/configure-geth.sh"
           ],
-          "commandToExecute": "[concat('sh configure-geth.sh')]"
+          "commandToExecute": "[concat('sh configure-geth.sh ', parameters('adminUsername'))]"
         }
       }
     }
