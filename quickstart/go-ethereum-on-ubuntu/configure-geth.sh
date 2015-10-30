@@ -34,10 +34,10 @@ time sudo add-apt-repository -y ppa:ethereum/ethereum-dev
 time sudo apt-get update
 time sudo apt-get install -y ethereum
 
-# Make the ~/.ethereum directory to skip the legalese
-mkdir ~/.ethereum
+# Make the $$HOMEDIR/ethereum directory to skip the legalese
+mkdir $HOMEDIR/ethereum
 
-nohup geth > ~/geth.log &
+nohup geth > $HOMEDIR/geth.log &
 
 date
 echo "completed geth install $$"
