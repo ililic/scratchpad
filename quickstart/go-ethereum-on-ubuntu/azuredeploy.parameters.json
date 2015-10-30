@@ -2,26 +2,23 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "storageAccountPrefix": {
-      "value": "gethstore45"
+    "newStorageAccountName": {
+      "value": "storage"
     },
-    "virtualNetworkName": {
-      "value": "vnet1"
+    "vmDnsName": {
+      "value": "vmdnsname"
     },
     "adminUsername": {
       "value": "azureuser"
     },
     "adminPassword": {
-      "value": "P@ssword1"
+      "value": "password"
     },
-    "region": {
-      "value": "West US"
+    "mySqlPassword": {
+      "value": "password"
     },
-    "dnsName": {
-      "value": "geth-test5"
-    },
-    "masterVmSize": {
-      "value": "Standard_D1"
+    "vmSize": {
+      "value": "Standard_D2"
     }
   }
 }
