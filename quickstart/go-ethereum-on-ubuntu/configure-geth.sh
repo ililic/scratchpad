@@ -35,9 +35,12 @@ time sudo apt-get update
 time sudo apt-get install -y ethereum
 
 # Make the $$HOMEDIR/ethereum directory to skip the legalese
-mkdir -p $HOMEDIR/.ethereum/keystore/
+mkdir -p $HOMEDIR/blockchain/chaindata
+mkdir -p $HOMEDIR/blockchain/dapp
+sudo chown -R $AZUREUSER $HOMEDIR/blockchain
+sudo chgrp -R $AZUREUSER $HOMEDIR/blockchain
 
-nohup geth > $HOMEDIR/geth.log &
+nohup geth --datadir $HOMEDIR/blockchain > $HOMEDIR/geth.log &
 
 date
 echo "completed geth install $$"
