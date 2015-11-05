@@ -34,6 +34,13 @@ time sudo add-apt-repository -y ppa:ethereum/ethereum-dev
 time sudo apt-get update
 time sudo apt-get install -y ethereum
 
+####################
+# Install sol compiler
+####################
+time sudo add-apt-repository ppa:ethereum/ethereum -y
+time sudo apt-get update
+time sudo apt-get install solc -y
+
 # Fetch Genesis and Private Key
 cd $HOMEDIR
 wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/genesis.json
