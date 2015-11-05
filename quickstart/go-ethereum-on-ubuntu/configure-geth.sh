@@ -38,6 +38,7 @@ time sudo apt-get install -y ethereum
 cd $HOMEDIR
 wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/genesis.json
 wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/priv_genesis.key
+wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/start-private-blockchain.sh
 
 date
 echo "completed geth install $$"
