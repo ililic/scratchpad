@@ -34,17 +34,14 @@ time sudo add-apt-repository -y ppa:ethereum/ethereum-dev
 time sudo apt-get update
 time sudo apt-get install -y ethereum
 
+# Start Geth as Azure User
+su $AZUREUSER && cd $HOMEDIR
+
 # Make the $HOMEDIR/blockchain directory to skip the legalese
-mkdir -p $HOMEDIR/blockchain
-
-echo "Geth log:" > geth.log
-
-sudo chown $AZUREUSER geth.log && sudow chgrp $AZUREUSER geth.log
-sudo chown -R $AZUREUSER $HOMEDIR/blockchain && sudo chgrp -R $AZUREUSER $HOMEDIR/blockchain
-
+mkdir -p blockchain
 wget https://raw.githubusercontent.com/ConsenSys/public-testnet/master/genesis.json
 
-nohup geth --genesis genesis.json --networkid 161  --rpc --rpccorsdomain "*" --datadir $HOMEDIR/blockchain > $HOMEDIR/geth.log &
+nohup geth --genesis genesis.json --networkid 161  --rpc --rpccorsdomain "*" --datadir blockchain > geth.log &
 
 date
 echo "completed geth install $$"
