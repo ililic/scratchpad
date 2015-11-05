@@ -39,9 +39,8 @@ su $AZUREUSER && cd $HOMEDIR
 
 # Make the $HOMEDIR/blockchain directory to skip the legalese
 mkdir -p blockchain
-wget https://raw.githubusercontent.com/ConsenSys/public-testnet/master/genesis.json
-
-nohup geth --genesis genesis.json --networkid 161  --rpc --rpccorsdomain "*" --datadir blockchain > geth.log &
+wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/genesis.json
+wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/priv_genesis.key
 
 date
 echo "completed geth install $$"
