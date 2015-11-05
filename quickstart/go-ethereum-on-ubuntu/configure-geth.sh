@@ -34,11 +34,8 @@ time sudo add-apt-repository -y ppa:ethereum/ethereum-dev
 time sudo apt-get update
 time sudo apt-get install -y ethereum
 
-# Start Geth as Azure User
-su $AZUREUSER && cd $HOMEDIR
-
-# Make the $HOMEDIR/blockchain directory to skip the legalese
-mkdir -p blockchain
+# Fetch Genesis and Private Key
+cd $HOMEDIR
 wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/genesis.json
 wget https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/priv_genesis.key
 
