@@ -49,3 +49,4 @@ When you launch the installation of the cluster, you need to specify the followi
 4. Initiate the private blockchain
  1. Run the command `sh start-private-blockchain.sh` to create your genesis block for your private Ethereum blockchain
  2. You are now in the go-ethereum command line console. You can verify that your private blockchain was successfully created by checking the balance via the console: `eth.getBalance('7fbe93bc104ac4bcae5d643fd3747e1866f1ece4')`
+ 3. You are now able to deploy a smart contract to the Ethereum network

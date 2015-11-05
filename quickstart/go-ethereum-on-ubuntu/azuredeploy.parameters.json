@@ -3,22 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "newStorageAccountName": {
-      "value": "storage"
+      "value": "gethtest01"
     },
     "vmDnsName": {
-      "value": "vmdnsname"
+      "value": "publicNode"
     },
     "adminUsername": {
       "value": "azureuser"
     },
     "adminPassword": {
-      "value": "password"
-    },
-    "mySqlPassword": {
-      "value": "password"
+      "value": "P@ssword1"
     },
     "vmSize": {
-      "value": "Standard_D2"
+      "value": "Standard_D1"
     }
   }
 }
