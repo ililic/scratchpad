@@ -41,7 +41,7 @@ When you launch the installation of the cluster, you need to specify the followi
  2. Enter your `adminPassword`
 
 3. Import the private key
- 1. By running the `ls` command you should see three files: `genesis.json`, `priv_genesis.key` and `start-private-blockchain.sh`
+ 1. By running the `ls` command you should see three files: `genesis.json`, `priv_genesis.key`, `start-private-blockchain.sh` and `GuestBook.sol`
  2. Import the private key into geth by running the command `geth account import priv_genesis.key`
  3. Accept the legal disclaimer
  4. Enter a password to secure the key within geth
@@ -50,3 +50,11 @@ When you launch the installation of the cluster, you need to specify the followi
  1. Run the command `sh start-private-blockchain.sh` to create your genesis block for your private Ethereum blockchain
  2. You are now in the go-ethereum command line console. You can verify that your private blockchain was successfully created by checking the balance via the console: `eth.getBalance('7fbe93bc104ac4bcae5d643fd3747e1866f1ece4')`
  3. You are now able to deploy a smart contract to the Ethereum network
+
+# Deploying your first contract
+
+Welcome to the Ethereum ecosystem. You are now on your journey to becoming a decentralized application developer.
+
+Earlier when you ran the `ls` command there was a file named `GuestBook.sol` - this is a very simple guest book contract written in the Solidity smart contract programming language.
+
+Learning Solidity is beyond the scope of this walk through, but feel free to read the code and try to understand what the contract is trying to do.  
