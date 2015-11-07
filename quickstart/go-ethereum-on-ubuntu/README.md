@@ -40,7 +40,7 @@ When you launch the installation of the cluster, you need to specify the followi
  2. Enter your `adminPassword`
 
 3. Import the private key
- 1. By running the `ls` command you should see three files: `genesis.json`, `priv_genesis.key`, `start-private-blockchain.sh` and `GuestBook.sol`
+ 1. By running the `ls` command you should see three files: `genesis.json`, `GuestBook.sol`, `priv_genesis.key` and `start-private-blockchain.sh`.
  2. Import the private key into geth by running the command `geth account import priv_genesis.key`
  3. Accept the legal disclaimer
  4. Enter a password to secure the key within geth (remember this! we'll use it later)
@@ -48,7 +48,7 @@ When you launch the installation of the cluster, you need to specify the followi
 4. Initiate the private blockchain
  1. Run the command `sh start-private-blockchain.sh` to create your genesis block for your private Ethereum blockchain
  2. You are now in the go-ethereum command line console. You can verify that your private blockchain was successfully created by checking the balance via the console: `eth.getBalance('7fbe93bc104ac4bcae5d643fd3747e1866f1ece4')`
- 3. You are now able to deploy a smart contract to the Ethereum network. Kill the current process (ctrl+c) - we'll get back to the console shortly
+ 3. You are now able to deploy a smart contract to the Ethereum network. Kill the current process (`ctrl+d`) - we'll get back to the console shortly
 
 # Deploying your first contract
 
@@ -70,7 +70,7 @@ Our next step is to take the `GuestBook.sol` and compile it in the geth console.
 
 Next, lets start our node back up - `sh start-private-blockchain.sh`
 
-The Geth console is actually a Javascript console; so if you have familiarity with NodeJs this should be a comfortable environment. Let's set a variable containing our source code:
+The Geth console actually implmements a [JavaScript Runtime Environment](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console); so if you have familiarity with NodeJs this should be a comfortable environment. Let's set a variable containing our source code:
 
 ```
 var guestBookSource = 'contract GuestBook {   mapping (address => string) entryLog;    function setEntry(string guestBookEntry) {     entryLog[msg.sender] = guestBookEntry;   }    function getMyEntry() constant returns (string) {     return entryLog[msg.sender];   } }'
@@ -102,7 +102,7 @@ var callback = function(e, contract){
       if(!contract.address) {
         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
       } else {
-        console.log("Contract mined!);
+        console.log("Contract mined!");
         console.log(contract);
       }
     }
@@ -136,9 +136,9 @@ Congratulations - you have a contract deployed to the Ethereum network!
 ...except for one little detail.
 
 ## Mining the contract
-As it turns out, deploying the contract to the network isn't sufficient to actually be able to interact with it. There's one missing component: having the contract mined.
+As it turns out, simply `send`ing the contract to the network isn't sufficient - there is a missing component: having the contract mined.
 
-On the public network this would be solved for us simply by waiting approximately 15 seconds before the contract is added to the blockchain. However since this is our own private test network; there are no miners to speak of.
+On the public network this would be solved for us simply by waiting approximately [15 seconds](https://stats.ethdev.com/) before the contract is added to the blockchain. However since this is our own private test network; there are no miners to speak of.
 
 Interesting. How do we solve this problem? By turning on CPU mining locally:
 
@@ -180,14 +180,16 @@ The empty string is expected - we haven't yet written an entry to the contract's
 ## Writing to the contract
 In our previous example we were able to call the `guestBook.getMyEntry()` function directly and receive a response synchronously from our local node. This is possible since read operations do not create a state change in the contract - no need to tell the network we are updating data.
 
-However the next call we're looking at `guestBook.setEntry()` does actually write data to the contract's internal storage - here's the function declaration for a refresher:
+However our next function all `guestBook.setEntry()` writes data to the contract's internal storage - here's the function declaration for a refresher:
 
 ```
+...
 mapping (address => string) entryLog;
 
 function setEntry(string guestBookEntry) {
   entryLog[msg.sender] = guestBookEntry;
 }
+...
 ```
 
 In order for us to write to the entryLog of the contract and have that update stored in the blockchain, we need to send a transaction to the contract address.
