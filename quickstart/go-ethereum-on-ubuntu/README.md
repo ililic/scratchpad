@@ -18,7 +18,6 @@ Once your deployment is complete you will have a sandbox environment with:
 
 ![Ethereum-Azure](https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/images/eth.jpg)
 
-
 # Template Parameters
 When you launch the installation of the cluster, you need to specify the following parameters:
 * `newStorageAccountNamePrefix`: make sure this is a unique identifier. Azure Storage's accounts are global so make sure you use a prefix that is unique to your account otherwise there is a good change it will clash with names already in use.
@@ -103,7 +102,7 @@ var callback = function(e, contract){
       if(!contract.address) {
         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
       } else {
-        console.log("Contract mined! Address: " + contract.address);
+        console.log("Contract mined!);
         console.log(contract);
       }
     }
@@ -149,4 +148,12 @@ web3.miner.start()
 
 We'll have to wait a little bit while your node generates its Directed Acyclic Graph (DAG). This process is what helps the Ethereum network be resistant to ASIC mining; but that's a topic for another time.
 
-Once the DAG is generated, our node will start mining.
+Once the DAG is generated, our node will start mining. We'll see console messages like:
+```
+ :hammer:  Mined block
+```
+
+And eventually our call back will fire:
+`Contract mined!`
+
+Congratulations - your contract is now alive on the Ethereum Network!
