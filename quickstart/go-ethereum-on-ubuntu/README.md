@@ -149,11 +149,75 @@ web3.miner.start()
 We'll have to wait a little bit while your node generates its Directed Acyclic Graph (DAG). This process is what helps the Ethereum network be resistant to ASIC mining; but that's a topic for another time.
 
 Once the DAG is generated, our node will start mining. We'll see console messages like:
-```
- :hammer:  Mined block
-```
+
+ :hammer:`Mined block`
 
 And eventually our call back will fire:
 `Contract mined!`
 
 Congratulations - your contract is now alive on the Ethereum Network!
+
+Go ahead and stop your miner for the moment:
+```
+web3.miner.stop()
+```
+
+## Reading from the contract
+Our contract is now permanently stored on the blockchain - we can learn the contract's address by interrogating our  guestBook object: `guestBook.address`
+
+The object returned will give us the address of the contract, as well as a hash of the contract and also all of the functions we defined in our original solidity source code.
+
+We can read our guest book's entry via a call to `guestBook.getMyEntry()`
+
+Giving it a try we get the response:
+```
+> guestBook.getMyEntry();
+""
+```
+
+The empty string is expected - we haven't yet written an entry to the contract's storage. For this we will have to send a transaction to the contract and tell it to invoke the `setEntry` function.
+
+## Writing to the contract
+In our previous example we were able to call the `guestBook.getMyEntry()` function directly and receive a response synchronously from our local node. This is possible since read operations do not create a state change in the contract - no need to tell the network we are updating data.
+
+However the next call we're looking at `guestBook.setEntry()` does actually write data to the contract's internal storage - here's the function declaration for a refresher:
+
+```
+mapping (address => string) entryLog;
+
+function setEntry(string guestBookEntry) {
+  entryLog[msg.sender] = guestBookEntry;
+}
+```
+
+In order for us to write to the entryLog of the contract and have that update stored in the blockchain, we need to send a transaction to the contract address.
+
+```
+guestBook.setEntry.sendTransaction("Hello Azure!", {from: eth.accounts[0]});
+```
+
+Now if we read from the contract again we should see the following:
+```
+> guestBook.getMyEntry();
+""
+```
+
+An empty string again - because we haven't yet mined this new transaction. We'll need to go back to mining blocks to get the transaction into the blockchain:
+
+```
+web3.miner.start()
+```
+:hammer:`Mined block`
+```
+web3.miner.stop()
+```
+
+Now if we read from the contract:
+```
+> guestBook.getMyEntry();
+"Hello Azure"
+```
+
+Congratulations! Your first contract is alive and well on your private Ethereum blockchain.
+
+What else will you build?
