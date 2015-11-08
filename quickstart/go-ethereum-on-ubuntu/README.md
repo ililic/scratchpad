@@ -2,7 +2,7 @@
 
 This Microsoft Azure template deploys a single Ethereum client with a private chain for development and testing.
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fgithub.com%2fililic%2fscratchpad%2fblob%2fmaster%2fquickstart%2fgo-ether
 
 Once your deployment is complete you will have a sandbox environment with:
 
@@ -16,7 +16,7 @@ Once your deployment is complete you will have a sandbox environment with:
 ** Note this private key is exposed on a public GitHub repository. It should _never_ be used on a public network. If you use this key for anything besides sandbox testing purposes, your funds will be lost!
 
 
-![Ethereum-Azure](https://raw.githubusercontent.com/ililic/scratchpad/master/quickstart/go-ethereum-on-ubuntu/images/eth.jpg)
+![Ethereum-Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/quickstart/go-ethereum-on-ubuntu/images/eth.jpg)
 
 # Template Parameters
 When you launch the installation of the cluster, you need to specify the following parameters:
@@ -221,5 +221,3 @@ Now if we read from the contract:
 ```
 
 Congratulations! Your first contract is alive and well on your private Ethereum blockchain.
-
-What else will you build?
