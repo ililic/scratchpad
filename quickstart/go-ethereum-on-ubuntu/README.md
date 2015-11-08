@@ -2,7 +2,7 @@
 
 This Microsoft Azure template deploys a single Ethereum client with a private chain for development and testing.
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fgithub.com%2fililic%2fscratchpad%2fblob%2fmaster%2fquickstart%2fgo-ether
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fililic%2fscratchpad%2fmaster%2fquickstart%2fgo-ethereum-on-ubuntu%2fazuredeploy.json)
 
 Once your deployment is complete you will have a sandbox environment with:
 
